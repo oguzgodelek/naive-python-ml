@@ -102,3 +102,6 @@ venv.bak/
 
 cython_debug/
 
+.idea
+.*
+
