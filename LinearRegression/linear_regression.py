@@ -31,7 +31,7 @@ class LinearRegression:
             if self.verbose:
                 print(f"Epoch: {epoch}, MSE Error: {mse_error}")
             self.bias += self.lr * sum(ind_errors) / len(self._data)
-            self.weights = list(map(lambda w: w[1] + self.lr * (sum(map(lambda data: ind_errors[data[0]] * data[w[0]],
+            self.weights = list(map(lambda w: w[1] + self.lr * (sum(map(lambda data: ind_errors[data[0]] * data[1][w[0]],
                                                                         enumerate(self._data))) / len(self._data)),
                                     enumerate(self.weights)))
             if epoch > 2 and abs(self.error_history[-1] - self.error_history[-2]) < self.early_stopping_error:
